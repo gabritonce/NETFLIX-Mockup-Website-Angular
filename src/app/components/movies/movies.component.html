@@ -1,0 +1,22 @@
+<div class="text-center">
+  <h1>I NOSTRI FILM</h1>
+</div>
+<div class="text-center" *ngIf="!movies">
+  <span class="spinner-grow"></span>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6 h-100 rounded-5" *ngFor="let movie of movies">
+          <div class="card h-100ov mb-4">
+              <a [routerLink]="[movie.id]">
+                  <img src="{{ imageURL }}{{ movie.poster_path }}" class="card-img-top"
+                      alt="Locandina {{ movie.title }}" />
+                  <div class="card-body">
+                      <h5 class="card-title">{{ movie.title }}</h5>
+                  </div>
+              </a>
+              <button type="button" (click)="isFavorito(movie) ? eliminaFavorito(movie) : aggiungiFavorito(movie.id)" [ngClass]="{'bg-danger': isFavorito(movie), 'bg-white': !isFavorito(movie)}">👍</button>
+          </div>
+      </div>
+  </div>
+</div>

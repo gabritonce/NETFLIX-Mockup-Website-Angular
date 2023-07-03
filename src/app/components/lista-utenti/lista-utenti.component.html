@@ -1,0 +1,19 @@
+<div class="text-center">
+  <h1>I NOSTRI UTENTI</h1>
+</div>
+<div class="text-center" *ngIf="!listaUtenti">
+  <span class="spinner-grow"></span>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+          <ul class="list-group">
+              <li class="list-group-item" *ngFor="let utente of listaUtenti">
+                  Nome: {{utente.name}} - email: {{utente.email}}
+              </li>
+          </ul>
+      </div>
+      <div class="col-3"></div>
+  </div>
+</div>

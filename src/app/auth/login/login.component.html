@@ -1,0 +1,17 @@
+<div id="body">
+
+
+<div class="container">
+  <form #form="ngForm" (ngSubmit)="accedi(form)">
+      <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" required ngModel>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" class="form-control" required ngModel>
+      </div>
+      <div id="bottone">
+      <button type="submit" class="btn btn-dark mt-3" [disabled]="form.invalid">Accedi</button>
+    </div>
+  </form>
+</div>
+</div>
